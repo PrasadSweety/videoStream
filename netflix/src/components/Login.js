@@ -36,7 +36,6 @@ const Login = () => {
           headers,
           withCredentials: true,
         });
-        console.log(res);
         if (res.data.success) {
           toast.success(res.data.message);
         }
@@ -62,7 +61,6 @@ const Login = () => {
           withCredentials: true,
         });
 
-        console.log("Response:", JSON.stringify(res, null, 2));
         if (res.data.success) {
           toast.success(res.data.message);
           setIsLogin(true);
@@ -73,8 +71,6 @@ const Login = () => {
         dispatch(setLoading(false));
       }
     }
-
-    // console.log(name, email, password);
 
     setEmail("");
     setName("");
