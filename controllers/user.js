@@ -44,8 +44,6 @@ export const Login = async (req, resp) => {
         user,
         success: true,
       });
-
-    // const data = await User.find
   } catch (error) {
     console.log(error);
   }
@@ -64,7 +62,6 @@ export const Logout = async (req, resp) => {
 export const Register = async (req, resp) => {
   try {
     const { fullName, email, password } = req.body;
-    console.log(fullName, email, password);
     if (!fullName || !email || !password) {
       return resp.status(401).json({
         Message: "Empty data",
