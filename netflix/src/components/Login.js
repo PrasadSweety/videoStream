@@ -56,16 +56,18 @@ const Login = () => {
         };
         const fullName = name;
         const user = { fullName, email, password };
-        const res = await axios.post(`${API_END_POINT}/register`, user, user, {
+        console.log(email, password);
+        const res = await axios.post(`${API_END_POINT}/register`, user, {
           headers,
           withCredentials: true,
         });
-
+        console.log(res.data.success);
         if (res.data.success) {
           toast.success(res.data.message);
           setIsLogin(true);
         }
       } catch (error) {
+        console.log(error);
         toast.error(error.response.data.message);
       } finally {
         dispatch(setLoading(false));
