@@ -1,4 +1,4 @@
-export const API_END_POINT = `${window.location.origin}/api/v1/user`;
+export const API_END_POINT = `/api/v1/user`;
 
 export const options = {
   method: "GET",
