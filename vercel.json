@@ -1,12 +1,28 @@
 {
+  "builds": [
+    {
+      "src": "backend/netflix/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "backend/netflix/build"
+      }
+    },
+    {
+      "src": "backend/index.js",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
     {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
+      "src": "/api/(.*)",
+      "dest": "backend/index.js"
     },
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "backend/netflix/build/$1"
+    },
+    {
+      "handle": "filesystem"
     }
   ]
 }
