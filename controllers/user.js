@@ -66,7 +66,7 @@ export const Register = async (req, resp) => {
 
     if (!fullName || !email || !password) {
       return resp.status(401).json({
-        Message: "Empty data",
+        Message: "Empty data myyyy",
         success: false,
       });
     }

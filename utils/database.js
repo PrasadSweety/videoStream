@@ -10,7 +10,9 @@ const databaseConnection = () => {
       console.log("Mongodb connected successfully");
     })
     .catch((error) => {
-      console.log(error);
+      console.error("MongoDB connection error:", error);
+      process.exit(1);
+      // console.log(error);
     });
 };
 
