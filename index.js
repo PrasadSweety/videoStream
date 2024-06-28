@@ -24,7 +24,8 @@ app.use(express.json());
 app.use(cookieParser());
 
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: "https://video-stream-gray.vercel.app",
+  // "http://localhost:3000",
   credentials: true,
 };
 
