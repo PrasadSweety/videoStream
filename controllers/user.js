@@ -62,6 +62,8 @@ export const Logout = async (req, resp) => {
 export const Register = async (req, resp) => {
   try {
     const { fullName, email, password } = req.body;
+    console.log(email, password);
+
     if (!fullName || !email || !password) {
       return resp.status(401).json({
         Message: "Empty data",
