@@ -32,7 +32,7 @@ app.use(cors(corsOptions));
 
 app.use("/api/v1/user", userRoute);
 
-app.get("/", (req, resp) => {
+app.get("*", (req, resp) => {
   console.log(__dirname);
   app.use(express.static(path.resolve(__dirname, "netflix", "build")));
   resp.sendFile(path.resolve(__dirname, "netflix", "build", "index.html"));
